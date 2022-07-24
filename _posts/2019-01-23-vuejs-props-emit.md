@@ -4,8 +4,9 @@ date: 2019-01-23 08:00:00
 categories: [Vue.js, Vue]
 tags: [Vue.js, Javascript, Node.js]
 ---
-## 第一部分、父元件→子元件
-### 利用props將資料傳給components使用
+### 第一部分、父元件→子元件
+> 利用props將資料傳給components使用
+
 #### 1. 子元件的設定
 首先有一個子元件(child component)，我們設定一個 `props` 為 `userName`，型態為String，如果data內的參數，你可以直接在模板裡用 `{{ userName }}` 印出，或在function內以 `this.userName` 來進行操作。
 template的內容是以顯示 `userName` 在一個HTML的輸入框裡
@@ -54,8 +55,9 @@ new Vue({
 ```
 
 
-## 第二部分、子元件→父元件
-### 利用emit將components的資料回傳
+### 第二部分、子元件→父元件
+> 利用emit將components的資料回傳
+
 #### 1. 子元件的設定
 延續第一部分，我們在methods內新增一個 `sendToParent` 的function，`@input="sendToParent"` 代表我們觸發的時機。
 看一下 `sendToParent` 內容，`$emit` 後面第一個參數"`update-text`"，代表設定一個 `update-text` 的事件，第二參數是同時把 `childUserName` 這個參數傳出去，如果需要傳更多的參數，直接用逗號分隔接在後面。
