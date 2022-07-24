@@ -4,5 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+>  Life is not divided into semesters.
+  You don’t get summers off and very few employers are interested in helping you find yourself.
+  Do that on your own time.
+  --- Bill Gates
