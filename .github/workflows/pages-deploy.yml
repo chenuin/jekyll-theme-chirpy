@@ -34,19 +34,14 @@ jobs:
             -v
 
           echo "Testing target repository access..."
-          # Parse owner/repo from TARGET_REPO secret
-          REPO_URL="${{ secrets.TARGET_REPO }}"
-          # Remove git@ prefix and .git suffix if present
-          REPO_PATH=$(echo "$REPO_URL" | sed 's/.*[:/]\([^/]*\/[^/]*\)\.git$/\1/')
-          
           echo "Target repository: $REPO_PATH"
           curl -H "Authorization: token ${{ secrets.GH_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/$REPO_PATH \
+            https://api.github.com/repos/${{ secrets.TARGET_REPO }} \
             -v
       - name: Deploy to GitHub Pages
         if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           repo: ${{ secrets.TARGET_REPO }}
           target_branch: ${{ secrets.TARGET_BRANCH }}
