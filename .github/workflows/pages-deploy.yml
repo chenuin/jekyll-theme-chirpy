@@ -33,4 +33,4 @@ jobs:
           target_branch: ${{ secrets.TARGET_BRANCH }}
           build_dir: _site
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
